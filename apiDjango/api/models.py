@@ -43,16 +43,21 @@ class Reserva(models.Model):
     numero_personas = models.IntegerField()
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     fecha_modificacion = models.DateTimeField(auto_now=True)
-    cliente_Fk= models.ForeignKey(Clientes,on_delete=models.CASCADE)
-    zonas_disponibles_FK = models.ForeignKey(Zonas_disponibles, on_delete=models.CASCADE)
+    
+    # Llave foranea cliente 
+    cliente= models.ForeignKey(Clientes,on_delete=models.CASCADE)
+    # Llave foranea Zonas disponobles
+    zonas_disponibles = models.ForeignKey(Zonas_disponibles, on_delete=models.CASCADE)
     
     def __str__(self):
-       return f"Reserva de {self.cliente} para {self.Zonas_disponibles} el {self.fecha_reserva}"
+       return f"Reserva de {self.cliente} para {self.zonas_disponibles} el {self.fecha_reserva}"
    
    
 class Cancelar_reserva(models.Model):
     feccha_cancelacion = models.DateTimeField()
     motivo = models.CharField( max_length=100)
-    reserva_FK = models.ForeignKey(Reserva, on_delete=models.CASCADE)
+    
+    # Llave foranea Reserva
+    reserva= models.ForeignKey(Reserva, on_delete=models.CASCADE)
     
 
