@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Clientes, Zonas_disponibles, Estado_reserva, Reserva, Cancelar_reserva
 from .serializers import ClientesSerializer, Zonas_disponiblesSerializer, Estado_reservaSerializer, ReservaSerializer, Cancelar_reservaSerializer
+from rest_framework import generics
 
 # Creacion de views de Clientes(metodos).
 class ClientesListCreate(generics.ListCreateAPIView):  #POST

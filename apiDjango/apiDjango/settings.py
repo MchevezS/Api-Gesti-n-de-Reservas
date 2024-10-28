@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework', 
+    'rest_framework',
     'apiDjango',
     'api'
 ]
@@ -77,9 +77,13 @@ WSGI_APPLICATION = 'apiDjango.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+     'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Api_Gestion_Reservas',  # El nombre de tu base de datos en MySQL
+        'USER': 'michelle',  # Tu usuario de MySQL
+        'PASSWORD': 'fwd1820',  # La contraseña de tu usuario MySQL
+        'HOST': '127.0.0.1',  # Si estás ejecutando MySQL localmente
+        'PORT': '3306',  # El puerto por defecto de MySQL
     }
 }
 
